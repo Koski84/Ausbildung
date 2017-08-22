@@ -24,7 +24,7 @@ namespace TheMaze
 				Console.WriteLine();
 				Console.SetCursorPosition(((Console.WindowWidth / 2) - (map.width / 2)), y + 2);
 				Console.Write("");
-                Thread.Sleep(100);
+                Thread.Sleep(50);
 
 				for (int x = 0; x<map.width; x++)
 				{

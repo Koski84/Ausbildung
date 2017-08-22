@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using TheMaze.Data;
+using System.Diagnostics;
 
 namespace TheMaze
 {
@@ -13,6 +14,9 @@ namespace TheMaze
 	{
 		
 		public bool[,] correctPath = new bool[12,12];
+        
+
+
 
 		public bool startPointFound = false;
 		public bool nextValidMove(MapFile map, int x, int y)
@@ -28,16 +32,16 @@ namespace TheMaze
                 return true;
             }
 
-
+            
 			if (x != 0)
 			{
-
+               
 				if (nextValidMove(map, x-1,y))
 				{
-                    
+                   
 					map.Matrix[x, y] = 9;
 					correctPath[x, y] = true;
-					return true;
+                    return correctPath[x, y];
 				}
 
 				if (x != map.width - 1)
@@ -47,7 +51,7 @@ namespace TheMaze
 					{
 						map.Matrix[x, y] = 9;
 						correctPath[x, y] = true;
-						return true;
+                        return correctPath[x, y];
 					}
 
 					if (y != 0)
@@ -56,7 +60,7 @@ namespace TheMaze
 						{
 							map.Matrix[x, y] = 9;
 							correctPath[x, y] = true;
-							return true;
+                            return correctPath[x, y];
 
 						}
 					}
@@ -67,26 +71,34 @@ namespace TheMaze
 						{
 							map.Matrix[x, y] = 9;
 							correctPath[x, y] = true;
-							return true;
+                            
+                            return correctPath[x, y];
 						}
 					} 	
 				}
+
+                
 			}
-          
+            
             return false;
 		}
 
 		public bool PathFinder(MapFile map)
 		{			
-			for (int x = 0; x < map.height; x++)
+			for (int x = 1; x < map.width; x++)
 			{
-				for (int y = 0; y < map.width; y++)
+				for (int y = 1; y < map.height; y++)
 				{
-					nextValidMove(map, x, y);
-					
+                    var status = MapDisplay.DisplayMap(map);
+                      if (status)
+                    {
+                       var solution = nextValidMove(map, x, y);
+                    }
 				}
 							
 			}
+
+
 			return map.end;
 		}
 	}
