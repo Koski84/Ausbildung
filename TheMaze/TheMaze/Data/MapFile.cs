@@ -10,6 +10,7 @@ namespace TheMaze.Data
 	{
 		
 		public byte[,] Matrix = null;
+        public bool[,] Solution = new bool [12,12];
 
 		public int width = 0;
 		public int height = 0;

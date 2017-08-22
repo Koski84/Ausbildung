@@ -29,15 +29,18 @@ namespace TheMaze.Business
 			return fileArray;
 		}
 
+      
 		public static MapFile ReadFile(string FileName)
 		{
 			MapFile map = null;
+            
 
 			if (FileName.Contains("MAP"))
 			{
                 string[] lines = File.ReadAllLines(@"C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\Data\" + FileName + ".txt");
 
 				map = new MapFile();
+               
 
 				map.width = lines[0].Replace(" ", "").Length;
 				map.height = lines.Length;

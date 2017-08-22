@@ -84,7 +84,9 @@ namespace TheMaze
 		}
 
 		public bool PathFinder(MapFile map)
-		{			
+		{
+            
+
 			for (int x = 1; x < map.width; x++)
 			{
 				for (int y = 1; y < map.height; y++)
@@ -93,13 +95,14 @@ namespace TheMaze
                       if (status)
                     {
                        var solution = nextValidMove(map, x, y);
-                    }
+                      
+                      }
 				}
 							
 			}
 
 
-			return map.end;
+			return true;
 		}
 	}
 }

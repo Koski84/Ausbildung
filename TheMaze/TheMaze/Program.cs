@@ -58,17 +58,7 @@ namespace TheMaze
 							if (selectedItem == 0)
 							{
 								
-								var FoundEndOfPath = pathFinder.PathFinder(map);
-
-								while (!FoundEndOfPath) {
-
-									var RedrawMap = MapDisplay.DisplayMap(map);
-                                 
-									FoundEndOfPath = pathFinder.PathFinder(map);
-						
-								}
-
-                								
+								var FoundEndOfPath = pathFinder.PathFinder(map);            								
 							}
 
 							else if(selectedItem == 1)
