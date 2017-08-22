@@ -14,8 +14,8 @@ namespace TheMaze.Business
 
 		public static string[] GetFileNames()
 		{
-			
-			string[] fileArray = Directory.GetFileSystemEntries(@"C:\Users\EMoreira\Documents\Visual Studio 2017\Projects\TheMaze\TheMaze\Data", "*.txt");
+
+            string[] fileArray = Directory.GetFileSystemEntries(@"C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\Data\", "*.txt");
 
 			for (int i = 0; i < fileArray.Length; i++)
 			{
@@ -35,7 +35,7 @@ namespace TheMaze.Business
 
 			if (FileName.Contains("MAP"))
 			{
-				string[] lines = File.ReadAllLines(@"C:\Users\EMoreira\Documents\Visual Studio 2017\Projects\TheMaze\TheMaze\Data\" + FileName + ".txt");
+                string[] lines = File.ReadAllLines(@"C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\Data\" + FileName + ".txt");
 
 				map = new MapFile();
 

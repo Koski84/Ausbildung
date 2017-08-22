@@ -4,3 +4,9 @@ c:\users\emoreira\documents\visual studio 2017\Projects\TheMaze\TheMaze\bin\Debu
 c:\users\emoreira\documents\visual studio 2017\Projects\TheMaze\TheMaze\obj\Debug\TheMaze.exe
 c:\users\emoreira\documents\visual studio 2017\Projects\TheMaze\TheMaze\obj\Debug\TheMaze.pdb
 C:\Users\EMoreira\documents\visual studio 2017\Projects\TheMaze\TheMaze\obj\Debug\TheMaze.csprojResolveAssemblyReference.cache
+C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\bin\Debug\TheMaze.exe.config
+C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\obj\Debug\TheMaze.exe
+C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\obj\Debug\TheMaze.pdb
+C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\bin\Debug\TheMaze.exe
+C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\bin\Debug\TheMaze.pdb
+C:\Users\EMoreira\Documents\GitHub\Ausbildung\TheMaze\TheMaze\obj\Debug\TheMaze.csprojResolveAssemblyReference.cache
