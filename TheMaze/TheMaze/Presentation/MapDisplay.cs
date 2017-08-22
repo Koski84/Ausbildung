@@ -24,9 +24,12 @@ namespace TheMaze
 				Console.WriteLine();
 				Console.SetCursorPosition(((Console.WindowWidth / 2) - (map.width / 2)), y + 2);
 				Console.Write("");
+                Thread.Sleep(100);
 
 				for (int x = 0; x<map.width; x++)
 				{
+                    
+
 					if (map.Matrix[x, y] == 3)
 					{
 
@@ -61,10 +64,12 @@ namespace TheMaze
 
 					else if (map.Matrix[x, y]==9)
 					{
-						Console.BackgroundColor = ConsoleColor.Yellow;
-						Console.ForegroundColor = ConsoleColor.Yellow;
-						Console.Write("9");
-						Console.ResetColor();
+                        
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("9");
+                        Console.ResetColor();
 					}
 
 					else if (map.Matrix[x, y] == 10)
@@ -86,7 +91,7 @@ namespace TheMaze
 				
 			}
 			Console.WriteLine();
-			Thread.Sleep(100);
+			//Thread.Sleep(400);
 			return true;
 			
 

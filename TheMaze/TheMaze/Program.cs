@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheMaze.Business;
 
+
 namespace TheMaze
 {
 	class Program
@@ -59,20 +60,15 @@ namespace TheMaze
 								
 								var FoundEndOfPath = pathFinder.PathFinder(map);
 
-								while (!FoundEndOfPath) { 
-								
+								while (!FoundEndOfPath) {
+
 									var RedrawMap = MapDisplay.DisplayMap(map);
+                                 
 									FoundEndOfPath = pathFinder.PathFinder(map);
 						
 								}
 
-								if (FoundEndOfPath)
-								{
-									var RedrawMap = MapDisplay.DisplayMap(map);
-								}
-
-								Menu.ShowMenu(MenuToMapPathFinder, Console.WindowHeight / 2);
-								
+                								
 							}
 
 							else if(selectedItem == 1)
