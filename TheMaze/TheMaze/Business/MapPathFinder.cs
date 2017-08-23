@@ -17,11 +17,11 @@ namespace TheMaze
         public bool startPointFound = false;
         public bool nextValidMove(MapFile map, int y, int x)
         {
-            if ((y == map.width) && (x == map.height))
-            {
+          //  if ((y == map.width) || (x == map.height))
+           // {
 
-                return false; //Checks if at the edge and terminates the method
-            }
+          //      return false; //Checks if at the edge and terminates the method
+        //    }
 
             if ((map.Matrix[y, x]) == 1)
             {
