@@ -14,71 +14,73 @@ namespace TheMaze
 	{
 		
 		public bool[,] correctPath = new bool[12,12];
-        
+        public int[,] previousPoint = new int[12, 12];
 
 
 
 		public bool startPointFound = false;
-		public bool nextValidMove(MapFile map, int x, int y)
+		public bool nextValidMove(MapFile map, int y, int x)
 		{
 			
 
-			if ((x == map.width) && (y == map.height)) { 
+			if ((y == map.width) && (x == map.height)) { 
              
                 return false;
             }
 
-			if ((map.Matrix[x, y]) == 1 ) {
+			if ((map.Matrix[y, x]) == 1 ) {
                 return true;
             }
 
             
-			if (x != 0)
+			if (y != 0)
 			{
                
-				if (nextValidMove(map, x-1,y))
+				if (nextValidMove(map, y-1,x))
 				{
-                   
-					map.Matrix[x, y] = 9;
-					correctPath[x, y] = true;
-                    return correctPath[x, y];
+					map.Matrix[y, x] = 9;
+                    correctPath[y, x] = true;
+                    return correctPath[y, x];
 				}
 
-				if (x != map.width - 1)
+				if (y != map.width - 1)
 				{
 
-					if (nextValidMove(map,x + 1, y))
+					if (nextValidMove(map,y + 1, x))
 					{
-						map.Matrix[x, y] = 9;
-						correctPath[x, y] = true;
-                        return correctPath[x, y];
+                        map.Matrix[y, x] = 9;
+                        correctPath[y, x] = true;
+                        return correctPath[y, x];
 					}
 
-					if (y != 0)
-					{
-						if (nextValidMove(map,x, y - 1))
-						{
-							map.Matrix[x, y] = 9;
-							correctPath[x, y] = true;
-                            return correctPath[x, y];
-
-						}
-					}
-
-					if (y != map.height - 1)
-					{
-						if (nextValidMove(map,x, y + 1))
-						{
-							map.Matrix[x, y] = 9;
-							correctPath[x, y] = true;
-                            
-                            return correctPath[x, y];
-						}
-					} 	
+					 	
 				}
 
-                
-			}
+                if (x != 0)
+                {
+                    if (nextValidMove(map, y, x - 1))
+                    {
+                        map.Matrix[y, x] = 9;
+                        correctPath[y, x] = true;
+                        return correctPath[y, x];
+
+                    }
+                }
+
+                if (x != map.height - 1)
+                {
+                    if (nextValidMove(map, y, x + 1))
+                    {
+                        map.Matrix[y, x] = 9;
+                        correctPath[y, x] = true;
+
+                        return correctPath[y, x];
+                    }
+                }
+
+
+            }
+            
             
             return false;
 		}
@@ -87,16 +89,16 @@ namespace TheMaze
 		{
             
 
-			for (int x = 1; x < map.width; x++)
+			for (int y = 1; y < map.width; y++)
 			{
-				for (int y = 1; y < map.height; y++)
+				for (int x = 1; x < map.height; x++)
 				{
-                    var status = MapDisplay.DisplayMap(map);
-                      if (status)
-                    {
-                       var solution = nextValidMove(map, x, y);
+                   var status = MapDisplay.DisplayMap(map);
+                     if (status)
+                   {
+                       nextValidMove(map, x, y);
                       
-                      }
+                     }
 				}
 							
 			}
