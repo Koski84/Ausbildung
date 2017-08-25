@@ -46,6 +46,7 @@
     <Compile Include="Business\MapManager.cs" />
     <Compile Include="Data\MapFile.cs" />
     <Compile Include="Business\MapPathFinder.cs" />
+    <Compile Include="MapPathFinderTest.cs" />
     <Compile Include="Presentation\MapDisplay.cs" />
     <Compile Include="Presentation\Menu.cs" />
     <Compile Include="Program.cs" />
